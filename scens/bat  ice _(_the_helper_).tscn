@@ -1,0 +1,334 @@
+[gd_scene load_steps=35 format=3 uid="uid://ckulsm61euwwg"]
+
+[ext_resource type="Script" uid="uid://buwmc3qk4djdg" path="res://scripts/bat_(_the_helper_).gd" id="1_aeqra"]
+[ext_resource type="Texture2D" uid="uid://d1su4de4dy4n" path="res://gra/Bat/Vampire/BatVampire_Sheet.png" id="2_a8qq7"]
+[ext_resource type="Texture2D" uid="uid://dw20tsmg0i6lm" path="res://gra/Bat/Standard/BatStandard_Sheet.png" id="3_5lmrt"]
+[ext_resource type="Texture2D" uid="uid://cqmpm607thod5" path="res://gra/pixelwpqefqfew.png" id="5_cn4bj"]
+[ext_resource type="PackedScene" uid="uid://dlxay453b4cbq" path="res://scens/user_inte_face.tscn" id="6_cqtc3"]
+[ext_resource type="FontFile" uid="uid://yamqw5qqtm05" path="res://gra/Arabixel Basic.ttf" id="7_kmvso"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj7p5"]
+atlas = ExtResource("2_a8qq7")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkkqa"]
+atlas = ExtResource("2_a8qq7")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnj25"]
+atlas = ExtResource("2_a8qq7")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5jr4"]
+atlas = ExtResource("2_a8qq7")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuf1g"]
+atlas = ExtResource("2_a8qq7")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gs8c"]
+atlas = ExtResource("2_a8qq7")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeqra"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8qq7"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpfpn"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_windk"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn4bj"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqtc3"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmvso"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfp4l"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ypm5"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_re8iw"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jx5qf"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw5ly"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6iet"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxaj8"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(192, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ph6h"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv053"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5t3yt"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yt22"]
+atlas = ExtResource("3_5lmrt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fgd82"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj7p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkkqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnj25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5jr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuf1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gs8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aeqra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8qq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpfpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_windk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn4bj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqtc3")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmvso")
+}],
+"loop": true,
+"name": &"catch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfp4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ypm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_re8iw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jx5qf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uw5ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6iet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxaj8")
+}],
+"loop": true,
+"name": &"die",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ph6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv053")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5t3yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yt22")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ay83"]
+radius = 3.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vu3qo"]
+height = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pc20t"]
+radius = 91.1976
+
+[node name="bat ( the helper )" type="CharacterBody2D"]
+collision_layer = 64
+collision_mask = 94
+script = ExtResource("1_aeqra")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fgd82")
+animation = &"idle"
+frame_progress = 0.324865
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_5ay83")
+
+[node name="attackArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackArea"]
+position = Vector2(-7, 3)
+shape = SubResource("CapsuleShape2D_vu3qo")
+
+[node name="NoticeArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoticeArea"]
+shape = SubResource("CircleShape2D_pc20t")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="attack_timer" type="Timer" parent="Timers"]
+wait_time = 0.6
+
+[node name="stop_the_start_move" type="Timer" parent="Timers"]
+wait_time = 3.0
+
+[node name="massge" type="Node2D" parent="."]
+visible = false
+scale = Vector2(0.4, 0.4)
+
+[node name="the massge" type="Sprite2D" parent="massge"]
+position = Vector2(145, -52.5)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_cn4bj")
+
+[node name="Label" type="Label" parent="massge"]
+offset_left = 27.5
+offset_top = -67.5
+offset_right = 259.5
+offset_bottom = -44.5
+theme_override_colors/font_color = Color(0, 0, 0, 0.992157)
+text = "شكرا على انقاذي لقد اخذت 10 "
+
+[node name="Label2" type="Label" parent="massge"]
+offset_left = 52.5
+offset_top = -45.0
+offset_right = 284.5
+offset_bottom = -22.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.992157)
+text = "نقاط من دمك كي اساعدك "
+
+[node name="User InterFace" parent="." instance=ExtResource("6_cqtc3")]
+
+[node name="masege_the_helath" type="MarginContainer" parent="User InterFace"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -294.0
+offset_right = 294.0
+offset_bottom = 74.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/margin_left = 140
+theme_override_constants/margin_top = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="User InterFace/masege_the_helath"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="User InterFace/masege_the_helath/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="User InterFace/masege_the_helath/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.823529, 0.898039, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("7_kmvso")
+theme_override_font_sizes/font_size = 55
+text = "     90"
+
+[node name="Label5" type="Label" parent="User InterFace/masege_the_helath/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.823529, 0.898039, 0, 1)
+theme_override_fonts/font = ExtResource("7_kmvso")
+theme_override_font_sizes/font_size = 55
+text = "من"
+
+[node name="Label4" type="Label" parent="User InterFace/masege_the_helath/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.823529, 0.898039, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("7_kmvso")
+theme_override_font_sizes/font_size = 55
+text = "80"
+
+[node name="Label2" type="Label" parent="User InterFace/masege_the_helath/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kmvso")
+theme_override_font_sizes/font_size = 55
+text = "الان دمك"
+
+[node name="Label" type="Label" parent="User InterFace/masege_the_helath/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_kmvso")
+theme_override_font_sizes/font_size = 55
+text = "احذر! دمك نزل,"
+
+[connection signal="body_entered" from="attackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="attackArea" to="." method="_on_attack_area_body_exited"]
+[connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]
+[connection signal="body_exited" from="NoticeArea" to="." method="_on_notice_area_body_exited"]
+[connection signal="timeout" from="Timers/attack_timer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="Timers/stop_the_start_move" to="." method="_on_stop_the_start_move_timeout"]

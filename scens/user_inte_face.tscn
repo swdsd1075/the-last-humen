@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlxay453b4cbq"]
+
+[ext_resource type="Script" uid="uid://brict48r6npev" path="res://scripts/user_inte_face.gd" id="1_fi0d5"]
+[ext_resource type="Texture2D" uid="uid://b53tad1kkvt1c" path="res://gra/SIMPLE HEALTHBARS/SIMPLE HEALTHBAR/RED HEALTHBAR/PNG/1.png" id="2_g3yt5"]
+[ext_resource type="Texture2D" uid="uid://bbiwtm1vdrvhk" path="res://gra/w3mroi2n3irnm2.png" id="2_ox3qe"]
+[ext_resource type="Texture2D" uid="uid://c22i44ajptayn" path="res://gra/SIMPLE HEALTHBARS/SIMPLE HEALTHBAR/RED HEALTHBAR/PNG/56.png" id="3_ox3qe"]
+[ext_resource type="Texture2D" uid="uid://dx1ix1vnvpr3m" path="res://gra/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Charge.png" id="5_ox3qe"]
+[ext_resource type="FontFile" uid="uid://b1yppcag07kut" path="res://gra/Minecraft.ttf" id="6_nojhl"]
+
+[node name="User InterFace" type="CanvasLayer"]
+script = ExtResource("1_fi0d5")
+
+[node name="health_bar" type="MarginContainer" parent="."]
+offset_right = 320.0
+offset_bottom = 320.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = -100
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="health_bar"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer"]
+position = Vector2(-21, 147)
+scale = Vector2(9.05, 8.95)
+texture = ExtResource("2_ox3qe")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="health_bar/HBoxContainer"]
+layout_mode = 2
+value = 80.0
+texture_over = ExtResource("2_g3yt5")
+texture_progress = ExtResource("3_ox3qe")
+
+[node name="status" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="status"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="status/HBoxContainer"]
+position = Vector2(254, 31)
+rotation = -0.509636
+scale = Vector2(6.6875, 7.38889)
+texture = ExtResource("5_ox3qe")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(42, 29, 16, 9)
+
+[node name="MarginContainer" type="MarginContainer" parent="status/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 120
+
+[node name="Label" type="Label" parent="status/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.756082, 0.315725, 2.88785e-07, 1)
+theme_override_fonts/font = ExtResource("6_nojhl")
+theme_override_font_sizes/font_size = 70
+text = "10"

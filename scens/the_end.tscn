@@ -1,0 +1,254 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnhbiyginnqt0"]
+
+[ext_resource type="Script" uid="uid://c65uldrw7drso" path="res://scripts/the_end.gd" id="1_g3k4j"]
+[ext_resource type="FontFile" uid="uid://yamqw5qqtm05" path="res://gra/Arabixel Basic.ttf" id="2_1o3vf"]
+[ext_resource type="AudioStream" uid="uid://b1x8yof7kd7gg" path="res://Audios/NormalGameSounds/click-buttons-ui-menu-sounds-effects-button-7-203601.mp3" id="3_b5x2b"]
+[ext_resource type="AudioStream" uid="uid://bthqmm2hk6h6j" path="res://Audios/NormalGameSounds/evil-lurks-258066.mp3" id="4_y6tgo"]
+
+[sub_resource type="Animation" id="Animation_1o3vf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/butoons:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/qs:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/no:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/yes:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y6tgo"]
+resource_name = "no"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/no:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.389171, 2.6, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g3k4j"]
+resource_name = "text1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/butoons:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/qs:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b5x2b"]
+resource_name = "yes"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/yes:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.389171, 2.53333, 2.93333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1o3vf"]
+_data = {
+&"RESET": SubResource("Animation_1o3vf"),
+&"no": SubResource("Animation_y6tgo"),
+&"text1": SubResource("Animation_g3k4j"),
+&"yes": SubResource("Animation_b5x2b")
+}
+
+[node name="the end" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g3k4j")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -3981.0
+offset_top = -1184.0
+offset_right = 7844.0
+offset_bottom = 4604.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1o3vf")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="butoons" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -224.5
+offset_top = -125.0
+offset_right = 224.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 150
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/butoons"]
+layout_mode = 2
+theme_override_constants/separation = 110
+
+[node name="Button" type="Button" parent="CanvasLayer/butoons/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1o3vf")
+theme_override_font_sizes/font_size = 120
+text = "اغدربهم"
+
+[node name="Button2" type="Button" parent="CanvasLayer/butoons/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1o3vf")
+theme_override_font_sizes/font_size = 120
+text = "لا اغدر بهم"
+
+[node name="qs" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -224.5
+offset_right = 224.5
+offset_bottom = 173.0
+grow_horizontal = 2
+theme_override_constants/margin_bottom = 150
+
+[node name="Label" type="Label" parent="CanvasLayer/qs"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1o3vf")
+theme_override_font_sizes/font_size = 140
+text = "هل تغدر بالخفافيش مقابل 
+ارجاع دمك الذي خذوه منك؟"
+
+[node name="yes" type="MarginContainer" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -464.0
+offset_top = -222.5
+offset_right = 464.0
+offset_bottom = 222.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_bottom = 150
+
+[node name="Label" type="Label" parent="CanvasLayer/yes"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_1o3vf")
+theme_override_font_sizes/font_size = 140
+text = "انتا غدار لن يثق بك احد"
+
+[node name="no" type="MarginContainer" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -464.0
+offset_top = -222.5
+offset_right = 464.0
+offset_bottom = 222.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_bottom = 150
+
+[node name="Label" type="Label" parent="CanvasLayer/no"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_1o3vf")
+theme_override_font_sizes/font_size = 140
+text = "انا شخص صالح"
+
+[node name="sounds" type="Node2D" parent="."]
+
+[node name="Click-buttons-ui-menu-sounds-effects-button-7-203601" type="AudioStreamPlayer2D" parent="sounds"]
+position = Vector2(229, 84)
+stream = ExtResource("3_b5x2b")
+
+[node name="Evil-lurks-258066" type="AudioStreamPlayer2D" parent="sounds"]
+position = Vector2(-641, 2533)
+stream = ExtResource("4_y6tgo")
+volume_db = 11.261
+
+[connection signal="pressed" from="CanvasLayer/butoons/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/butoons/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]

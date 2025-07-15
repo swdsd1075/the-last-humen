@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgxpkn3au08q7"]
+
+[ext_resource type="Script" uid="uid://c0riwawkfc6m5" path="res://scripts/cage.gd" id="1_0w648"]
+[ext_resource type="Texture2D" uid="uid://c5b07e7xvsq7" path="res://gra/pixil-frame-0-removebg-preview.png" id="1_d0taw"]
+[ext_resource type="FontFile" uid="uid://yamqw5qqtm05" path="res://gra/Arabixel Basic.ttf" id="3_fpjt3"]
+[ext_resource type="AudioStream" uid="uid://dvkqnmfiy1rfs" path="res://Audios/iron-bang-119810.mp3" id="4_rvp3o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0w648"]
+size = Vector2(583, 882.306)
+
+[node name="cage" type="Area2D"]
+scale = Vector2(0.13, 0.13)
+collision_layer = 32
+collision_mask = 33
+script = ExtResource("1_0w648")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, 351.155)
+shape = SubResource("RectangleShape2D_0w648")
+
+[node name="cageclose" type="Sprite2D" parent="."]
+texture = ExtResource("1_d0taw")
+
+[node name="cageopen" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -16)
+texture = ExtResource("1_d0taw")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 238)
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="T_open the cage" type="MarginContainer" parent="ui"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(300, 100)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+theme_override_constants/margin_left = 180
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ui/T_open the cage"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="label2" type="Label" parent="ui/T_open the cage/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_fpjt3")
+theme_override_font_sizes/font_size = 60
+text = "لتحرير الخفاش"
+
+[node name="label" type="Label" parent="ui/T_open the cage/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.803922, 0.780392, 0, 1)
+theme_override_fonts/font = ExtResource("3_fpjt3")
+theme_override_font_sizes/font_size = 60
+text = " E اضغط"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="Iron-bang-119810" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(938.462, 184.615)
+stream = ExtResource("4_rvp3o")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bclh2c7qoaxs4"]
+
+[ext_resource type="Texture2D" uid="uid://dx1ix1vnvpr3m" path="res://gra/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Charge.png" id="1_iqk5r"]
+[ext_resource type="Script" uid="uid://dfkcwkbdsf6oy" path="res://scripts/fireball.gd" id="1_waj7o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_waj7o"]
+radius = 7.0
+height = 14.0
+
+[node name="fireball" type="Area2D"]
+z_index = 16
+collision_layer = 16
+collision_mask = 22
+script = ExtResource("1_waj7o")
+
+[node name="Charge" type="Sprite2D" parent="."]
+texture = ExtResource("1_iqk5r")
+region_enabled = true
+region_rect = Rect2(42, 29, 16, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_waj7o")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(7.10543e-15, 0)
+scale = Vector2(0.8, 0.4)
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

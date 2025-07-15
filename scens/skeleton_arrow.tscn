@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://blpg2ytuxn7ph"]
+
+[ext_resource type="Script" uid="uid://kbb3de7bb1ng" path="res://scripts/skeleton_arrow.gd" id="1_1tr7h"]
+[ext_resource type="Texture2D" uid="uid://cu680f4yyrrd6" path="res://gra/Monster+Heart Pack/Archer Skeleton.png" id="1_yj0nh"]
+[ext_resource type="AudioStream" uid="uid://dxqgqyfwrslkx" path="res://Audios/NormalGameSounds/Minecraft - Hit (Sound Effect).mp3" id="3_o0ik2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ww1c"]
+radius = 1.0
+height = 18.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ol7wo"]
+size = Vector2(20, 4)
+
+[node name="skeleton_arrow" type="RigidBody2D"]
+collision_layer = 16
+collision_mask = 19
+gravity_scale = 0.0
+script = ExtResource("1_1tr7h")
+
+[node name="ArcherSkeleton" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_yj0nh")
+region_enabled = true
+region_rect = Rect2(567, 95, 22, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4ww1c")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ol7wo")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-1.07288e-06, -4.76837e-07)
+scale = Vector2(1.1, 0.1)
+
+[node name="Minecraft-Hit(soundEffect)" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1, 16)
+stream = ExtResource("3_o0ik2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

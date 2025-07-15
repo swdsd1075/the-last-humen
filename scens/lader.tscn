@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://v06a2x85aub4"]
+
+[ext_resource type="Script" uid="uid://c658fp5p6o56d" path="res://scripts/lader.gd" id="1_ko18w"]
+[ext_resource type="Texture2D" uid="uid://225dks7wq7b3" path="res://gra/Pixel Art Platformer - Village Props v2.3.0/Texture/TX Village Props.png" id="2_w0gci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0gci"]
+size = Vector2(30, 94)
+
+[node name="lader" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_ko18w")
+
+[node name="TxVillageProps" type="Sprite2D" parent="."]
+texture = ExtResource("2_w0gci")
+region_enabled = true
+region_rect = Rect2(320, 480, 32, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_w0gci")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
